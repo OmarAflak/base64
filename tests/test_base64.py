@@ -34,5 +34,5 @@ def test_encode_length():
 def test_encode_decode():
     string = random_string(1000)
     encoded = base64_encode(string)
-    decoded = base64_decoded(encoded)
+    decoded = base64_decode(encoded)
     assert string == decoded
