@@ -50,8 +50,11 @@ def base64_encode_binary(stream):
     return ''.join(new_chars)
 
 def base64_decode(string):
+    data = base64_decode_bytes(string)
+    return ''.join([chr(n) for n in data])
+
+def base64_decode_bytes(string):
     padding = sum([1 for c in string[-2:] if c == '='])
     data = [base64_char_to_code(c) for c in string[:len(string) - padding]]
     stream = ''.join(['{0:06b}'.format(n) for n in data])
-    data = [int(stream[i:i + 8], 2) for i in range(0, len(stream), 8)]
-    return ''.join([chr(n) for n in data])
+    return [int(stream[i:i + 8], 2) for i in range(0, len(stream), 8)]

@@ -1,7 +1,7 @@
 import random
 import string
 
-from encoder.base64 import base64_encode
+from encoder.base64 import base64_encode, base64_decode
 
 character_set = set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=')
 
@@ -30,3 +30,9 @@ def test_encode_simple():
 def test_encode_length():
     string = random_string()
     assert len(base64_encode(string)) > len(string)
+
+def test_encode_decode():
+    string = random_string()
+    encoded = base64_encode(string)
+    decoded = base64_decoded(encoded)
+    assert string == decoded
