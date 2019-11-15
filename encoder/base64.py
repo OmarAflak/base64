@@ -57,4 +57,6 @@ def base64_decode_bytes(string):
     padding = sum([1 for c in string[-2:] if c == '='])
     data = [base64_char_to_code(c) for c in string[:len(string) - padding]]
     stream = ''.join(['{0:06b}'.format(n) for n in data])
-    return [int(stream[i:i + 8], 2) for i in range(0, len(stream), 8)]
+    data = [int(stream[i:i + 8], 2) for i in range(0, len(stream), 8)]
+    trailing_zeros = 1 if padding == 2 else (2 if padding == 1 else 0)
+    return data[:len(data) - trailing_zeros]
