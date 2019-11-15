@@ -1,6 +1,6 @@
 # Base64 Encoder
 
-```
+```python
 from encoder.base64 import base64_encode
 
 # encode string
