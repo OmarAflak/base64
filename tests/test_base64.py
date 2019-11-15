@@ -25,7 +25,7 @@ def test_encode_ending_equal():
     assert '=' not in substr
 
 def test_encode_simple():
-    assert base64_encode("omar aflak") == "b21hciBhZmxhawo="
+    assert base64_encode("omar aflak") == "b21hciBhZmxhaw=="
 
 def test_encode_length():
     string = random_string()
