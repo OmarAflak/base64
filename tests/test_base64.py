@@ -5,9 +5,9 @@ from encoder.base64 import base64_encode, base64_decode
 
 character_set = set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=')
 
-def random_string(stringLength=100):
+def random_string(string_length=100):
     letters = string.ascii_lowercase
-    return ''.join(random.choice(letters) for i in range(stringLength))
+    return ''.join(random.choice(letters) for i in range(string_length))
 
 def test_encode_characters():
     string = random_string()
