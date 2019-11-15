@@ -3,7 +3,7 @@ import string
 
 from encoder.base64 import base64_encode
 
-character_set = set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/+=')
+character_set = set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=')
 
 def random_string(stringLength=100):
     letters = string.ascii_lowercase
